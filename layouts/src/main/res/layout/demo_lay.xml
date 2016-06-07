@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="dto"
+            type="com.peoplestouch.layouts.MyDTO"/>
+
+        <variable
+            name="trigger"
+            type="com.peoplestouch.layouts.MyTrigger"/>
+
+
+    </data>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:onClick="@{trigger.onIconClick}"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dto.lable}"
+            />
+    </LinearLayout>
+</layout>
