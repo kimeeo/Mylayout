@@ -9,6 +9,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -25,7 +26,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-
-    //compile 'com.github.kimeeo:DTO:143966bb81'
-    compile 'com.github.kimeeo:MyDefaultIcon:91b5191370'
+    compile 'com.github.kimeeo:MyDefaultIcon:19c93e9294'
 }
