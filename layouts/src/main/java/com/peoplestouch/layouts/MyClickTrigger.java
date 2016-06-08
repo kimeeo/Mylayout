@@ -7,7 +7,7 @@ import android.view.View;
 /**
  * Created by BhavinPadhiyar on 07/06/16.
  */
-public interface MyTrigger extends Observable
+public interface MyClickTrigger extends Observable
 {
     void onIconClick(View view);
 }

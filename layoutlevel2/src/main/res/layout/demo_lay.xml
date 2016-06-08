@@ -8,7 +8,7 @@
 
         <variable
             name="trigger"
-            type="com.peoplestouch.layouts.MyTrigger"/>
+            type="com.peoplestouch.layouts.MyClickTrigger"/>
 
 
     </data>
@@ -20,14 +20,17 @@
             android:layout_height="100dp"/>
         <ImageView
             android:onClick="@{trigger.onIconClick}"
-            app:srcCompat="@drawable/ic_android_black_24dp"
+            app:onClickAction="@{dto}"
+            android:src="@drawable/inset_example"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/inset_example"
             android:text="@{dto.lable}"
             />
+
     </LinearLayout>
 </layout>

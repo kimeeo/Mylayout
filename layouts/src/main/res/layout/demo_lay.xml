@@ -8,7 +8,7 @@
 
         <variable
             name="trigger"
-            type="com.peoplestouch.layouts.MyTrigger"/>
+            type="com.peoplestouch.layouts.MyClickTrigger"/>
 
 
     </data>
@@ -17,6 +17,7 @@
 
         <ImageView
             android:onClick="@{trigger.onIconClick}"
+            app:onClickAction="@{dto}"
             app:srcCompat="@drawable/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
