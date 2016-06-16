@@ -20,6 +20,6 @@ public class JSONTransform extends JavaScript{
     }
     public String transform(String json)
     {
-        return call("php_crud_api_transform",new Object[]{json});
+        return call("php_crud_api_transform",new Object[]{json}).toString();
     };
 }
