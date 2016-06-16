@@ -18,8 +18,7 @@ public class JavaScript {
     public JavaScript(@RawRes int jsFile, android.content.Context context, String[] methods) {
         try {
             InputStream is = context.getResources().openRawResource(jsFile);
-            byte[]  buffer = new byte[0];
-            buffer = new byte[is.available()];
+            byte[] buffer = new byte[is.available()];
             while (is.read(buffer) != -1);
             String javaScriptCode = new String(buffer);
             config(javaScriptCode,methods);
@@ -27,15 +26,14 @@ public class JavaScript {
             e.printStackTrace();
         }
     }
-    public JavaScript(String javaScriptCode, android.content.Context context, String[] methods) {
+    public JavaScript(String javaScriptCode, String[] methods) {
         config(javaScriptCode,methods);
     }
 
     public JavaScript(@RawRes int jsFile, android.content.Context context, String method) {
         try {
             InputStream is = context.getResources().openRawResource(jsFile);
-            byte[]  buffer = new byte[0];
-            buffer = new byte[is.available()];
+            byte[] buffer = new byte[is.available()];
             while (is.read(buffer) != -1);
             String javaScriptCode = new String(buffer);
             config(javaScriptCode,new String[]{method});
@@ -43,17 +41,13 @@ public class JavaScript {
             e.printStackTrace();
         }
     }
-    public JavaScript(String javaScriptCode, android.content.Context context, String method) {
+    public JavaScript(String javaScriptCode, String method) {
         config(javaScriptCode,new String[]{method});
-    }
-    public JavaScript() {
-
     }
 
     private Context rhino;
     private Scriptable scope;
     private Map<String,Function> functions;
-    private boolean isConfig=false;
     public void config(String javaScriptCode,String[] methods)
     {
         rhino = Context.enter();
@@ -74,8 +68,7 @@ public class JavaScript {
     {
         try {
             InputStream is = context.getResources().openRawResource(jsFile);
-            byte[] buffer = new byte[0];
-            buffer = new byte[is.available()];
+            byte[] buffer = new byte[is.available()];
             while (is.read(buffer) != -1) ;
             String javaScriptCode = new String(buffer);
             config(javaScriptCode,methods);
