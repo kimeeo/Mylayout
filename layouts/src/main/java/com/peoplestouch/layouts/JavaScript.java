@@ -91,10 +91,8 @@ public class JavaScript {
     {
         rhino.evaluateString(scope, javaScriptCode, "JavaScript", 1, null);
         Object obj = scope.get(method, scope);
-        if (obj instanceof Function) {
-            Function function = (Function) obj;
-            return function;
-        }
+        if (obj instanceof Function)
+            return (Function) obj;
         return null;
     }
 
