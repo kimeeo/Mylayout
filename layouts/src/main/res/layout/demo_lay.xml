@@ -18,7 +18,7 @@
         <ImageView
             android:onClick="@{trigger.onIconClick}"
             app:onClickAction="@{dto}"
-            app:srcCompat="@drawable/icon"
+            android:src="@drawable/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
