@@ -48,3 +48,8 @@ function php_crud_api_transform(tables)
 	}
 	return JSON.stringify(tree);
 }
+
+function msg(ok)
+{
+    alert(ok);
+}

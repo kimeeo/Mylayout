@@ -65,13 +65,15 @@ public class MainActivity extends AppCompatActivity implements android.databindi
         public MyT(MyDTO dto)
         {
             this.dto=dto;
-            javaScript=new JavaScript(R.raw.php_crud_api_transform,MainActivity.this,new String[]{"php_crud_api_transform"});
-            transform=new JSONTransform(R.raw.php_crud_api_transform,MainActivity.this,new String[]{"php_crud_api_transform"});
+            javaScript=new JavaScript(R.raw.php_crud_api_transform,MainActivity.this,new String[]{"php_crud_api_transform","msg"});
+            transform=new JSONTransform(R.raw.php_crud_api_transform,MainActivity.this,new String[]{"php_crud_api_transform","msg"});
         }
         @Override
         public void onIconClick(View view) {
             String jsontext ="{\"post\":{\"columns\":[\"id_post\",\"id_user\"],\"records\":[[\"2\",\"2\"]]},\"users\":{\"relations\":{\"id_user\":\"post.id_user\"},\"columns\":[\"id_user\",\"first_name\",\"photo\"],\"records\":[[\"2\",null,null]]},\"files\":{\"relations\":{\"id_post\":\"post.id_post\",\"id_user\":\"users.id_user\"},\"columns\":[\"id_files_data\",\"id\",\"id_user\",\"id_post\",\"id_event\",\"id_resource\",\"id_photo_album\",\"id_resource_data\",\"label\",\"url\",\"preview\",\"size\",\"color\",\"w\",\"h\",\"is_attachment\",\"is_video\",\"location\",\"longitude\",\"latitude\",\"time_stamp\"],\"records\":[[\"1\",null,\"2\",\"2\",null,null,null,null,\"OK\",null,null,null,null,null,null,null,null,null,null,null,\"2016-06-02 13:11:17\"],[\"2\",null,\"10\",\"2\",null,null,null,null,\"NEW FILE\",null,null,null,null,null,null,null,null,null,null,null,\"2016-06-14 05:51:18\"]]}}";
-            String data=javaScript.call("php_crud_api_transform",new Object[]{jsontext}).toString();
+            String data=javaScript.call("php_crud_api_transform",jsontext).toString();
+            //javaScript.call("msg",jsontext);
+
             System.out.println(data);
 
             data=transform.transform(jsontext);

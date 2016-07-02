@@ -89,7 +89,7 @@ public class JavaScript {
         return null;
     }
 
-    public Object call(String method,Object[] params)
+    public Object call(String method,Object... params)
     {
         for (Map.Entry<String, Function> entry : functions.entrySet()) {
             if (entry.getKey().equals(method)) {
